@@ -100,3 +100,22 @@ curl -X POST "http://127.0.0.1:3000/chat" \
 -H "Content-Type: application/json" \
 -d '{"query_text": "What are the health benefits of green tea?"}'
 ```
+
+## AI Prompt
+
+I am a student completing a technical lab on TT10A: Experiencing RAG with PDF Data Source. I have implemented document embedding and storage in a ChromaDB vector database using Python, LangChain, ChromaDB, and Ollama (Gemma).
+
+Based on this code snippet:
+db = Chroma(
+    persist_directory=CHROMA_PATH,
+    embedding_function=get_embedding_function()
+)
+
+new_chunk_ids = [chunk.metadata["id"] for chunk in new_chunks]
+db.add_documents(new_chunks, ids=new_chunk_ids)
+db.persist()
+
+
+## Summary
+
+This code creates and maintains a ChromaDB vector database by converting PDF content into embeddings and storing them for efficient semantic retrieval. As part of the Retrieval-Augmented Generation (RAG) architecture, it enables the application to retrieve relevant document context before generating responses with the LLM, improving both accuracy and reducing hallucinations. This contributes to a Smart and Secure System by providing reliable, context-aware information retrieval while supporting scalable and efficient AI-powered recommendations.
